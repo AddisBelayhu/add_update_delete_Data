@@ -1,22 +1,24 @@
+
 <?php
+
 include 'connect.php';
 
 if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $password = $_POST['password'];
 
-    $_name = $_POST['name'];
-    $_email = $_POST['email'];
-    $_mobile = $_POST['mobile'];
-    $_password = $_POST['password'];
+    $sql = "insert into `crud` (name,email,mobile,password)values('$name','$email','$mobile','$password')";
 
-    $sql = "insert in to 'crud'(name,email,mobile,password) values('$name', '$_email', '$_email', '$_password')";
-
-    $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con,$sql);
     if($result){
         echo "successfull connection";
         }else{
             die(mysqli_error($con));
-        }
+              }
 }
+
 ?>
 
 <!doctype html>
@@ -33,7 +35,7 @@ if(isset($_POST['submit'])){
   </head>
   <body>
     <div class="container my-5">
-    <form method = "POST">
+    <form method="post">
   <div class="form-group">
     <label>Name</label>
     <input type="text" class="form-control" placeholder="Enter your name" name="name" autocomplete = "off">
@@ -61,3 +63,4 @@ if(isset($_POST['submit'])){
 
   </body>
 </html>
+

@@ -1,3 +1,24 @@
+<?php
+include 'connect.php';
+
+if(isset($_POST['submit'])){
+
+    $_name = $_POST['name'];
+    $_email = $_POST['email'];
+    $_mobile = $_POST['mobile'];
+    $_password = $_POST['password'];
+
+    $sql = "insert in to 'crud'(name,email,mobile,password) values('$name', '$_email', '$_email', '$_password')";
+
+    $result = mysqli_query($con, $sql);
+    if($result){
+        echo "successfull connection";
+        }else{
+            die(mysqli_error($con));
+        }
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,7 +55,7 @@
     <input type="password" class="form-control" placeholder="Enter your name" name="password" autocomplete = "off">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
     </div>
 

@@ -1,6 +1,5 @@
 
 <?php
-
 include 'connect.php';
 
 if(isset($_POST['submit'])){
@@ -13,7 +12,8 @@ if(isset($_POST['submit'])){
 
     $result = mysqli_query($con,$sql);
     if($result){
-        echo "successfull connection";
+        //echo "Data inserted successfully";
+        header('location:display.php');
         }else{
             die(mysqli_error($con));
               }

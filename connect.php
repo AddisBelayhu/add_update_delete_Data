@@ -1,8 +1,8 @@
 <?php
 
-$con = new mysqli('localhost','root', '', 'crudeoperation');
+$con = new mysqli('localhost','root','','crudeoperation');
 
-if($con){
+if(!$con){
     //echo("successfull connection");
     die(mysqli_error($con));
 }

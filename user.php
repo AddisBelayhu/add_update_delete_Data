@@ -35,6 +35,7 @@ if(isset($_POST['submit'])){
   </head>
   <body>
     <div class="container my-5">
+      <h2>User Registration Page</h2><br><br>
     <form method="post">
   <div class="form-group">
     <label>Name</label>
